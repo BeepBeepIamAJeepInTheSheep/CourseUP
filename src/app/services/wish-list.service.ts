@@ -10,6 +10,8 @@ export class WishListService {
   private wishList: any[] = [];
   private cart: any[] = [];
   private wishListSubject = new BehaviorSubject<any[]>([]);
+  private cartSubject = new BehaviorSubject<any[]>([]);
+
 
   getCart(): any[] {
     return this.cart;
@@ -17,8 +19,15 @@ export class WishListService {
 
   addToCart(course: any): void {
     this.cart.push(course);
-    // Additional logic for adding to cart can be added here
-    console.log('Adding to cart:', course);
+    this.notifyCartChange();
+  }
+
+  removeFromCart(course: any): void {
+    const index = this.cart.indexOf(course);
+    if (index > -1) {
+      this.cart.splice(index, 1);
+      this.notifyCartChange();
+    }
   }
 
   getWishList(): any[] {
@@ -27,6 +36,9 @@ export class WishListService {
 
   getWishListObservable(): Observable<any[]> {
     return this.wishListSubject.asObservable();
+  }
+  getCartObservable(): Observable<any[]> {
+    return this.cartSubject.asObservable();
   }
 
   addToWishList(course: any): void {
@@ -48,5 +60,8 @@ export class WishListService {
 
   private notifyWishListChange(): void {
     this.wishListSubject.next([...this.wishList]);
+  }
+  private notifyCartChange(): void {
+    this.cartSubject.next([...this.cart]);
   }
 }

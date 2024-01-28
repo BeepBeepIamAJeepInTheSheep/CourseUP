@@ -1,24 +1,26 @@
 <ion-content>
-  <div class="flex-center">
-    <ion-card>
+  <div class="card-color">
+    <img class="banner" src="../../../assets/img/Banner.png">
+    <ion-card class="login-card">
       <ion-card-header>
         <ion-card-title>Log In</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
         <form (ngSubmit)="login()" [formGroup]="loginForm">
-        <ion-item>
-          <ion-input type="Email" (change)="onClick()" formControlName="email" label="Email" [(ngModel)]="email" name="email" labelPlacement="floating" placeholder="Enter here" required></ion-input>
-          <ion-label color="danger" *ngIf="loginForm.get('email')?.errors?.['required'] && isClicked">Email is required</ion-label>
-          <ion-label color="danger" *ngIf="loginForm.get('email')?.errors?.['email'] && isClicked">Invalid Email</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-input type="Password" (change)="onClick()" formControlName="password" label="Password" [(ngModel)]="password" name="password" labelPlacement="floating" placeholder="Enter here" required></ion-input>
-          <ion-label color="danger" *ngIf="loginForm.get('password')?.errors?.['required'] && isClicked">Password is required</ion-label>
-        </ion-item>
-        <ion-button type="submit" [disabled]="loginForm.invalid" color="dark" size="full">Log In</ion-button>
-      </form>
-      <ion-label color="danger" *ngIf="errorMessage">{{errorMessage}}</ion-label>
+          <ion-item>
+            <ion-input type="Email" (change)="onClick()" formControlName="email" label="Email" [(ngModel)]="email"
+              name="email" labelPlacement="floating" placeholder="Enter here" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="Password" (change)="onClick()" formControlName="password" label="Password"
+              [(ngModel)]="password" name="password" labelPlacement="floating" placeholder="Enter here"
+              required></ion-input>
+          </ion-item>
+          <ion-button color="success" type="submit" [disabled]="loginForm.invalid" size="full">Log In</ion-button>
+        </form>
+        <ion-label color="danger" *ngIf="errorMessage">{{errorMessage}}</ion-label>
+        <img src="../../assets/img/CompanyLogo.png">
       </ion-card-content>
     </ion-card>
   </div>
