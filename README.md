@@ -14,3 +14,5 @@ Components:
 3) WishList
 4) Cart
 5) Profile (***Feature Not Yet Added)
+
+Hosted Website Link: https://courseup.netlify.app/
