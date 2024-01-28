@@ -1,0 +1,20 @@
+ion-card {
+    width: 100%;
+    margin-left: 0px;
+}
+
+@media (min-width: 768px) {
+    ion-card {
+        width: 50%
+    }
+}
+
+.custom-Icon {
+    padding-left: 15px;
+    color: inherit; // Make sure to inherit the color
+    transition: color 0.5s; // Add a transition for color change
+}
+
+.custom-Icon.glow-effect {
+    color: green !important;
+  }
