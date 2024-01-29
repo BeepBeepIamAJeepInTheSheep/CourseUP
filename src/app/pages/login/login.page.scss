@@ -1,6 +1,11 @@
 .card-color {
     background: #00ace9;
-    height: -webkit-fill-available;
+    height: 100%;
+    text-align: center;
+    display: flow-root;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .background-color {
@@ -35,9 +40,16 @@
 
 .banner {
     max-width: 100%;
-    height: 250px;
-    justify-content: center;
-    margin-left: 25%;
-    margin-top: 10%;
-    margin-bottom: -80px;
+    height: 200px;
+}
+
+.image {
+    text-align: center;
+    margin: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-top: 5%;
+    margin-bottom: 0%;
 }
